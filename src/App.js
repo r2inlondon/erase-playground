@@ -1,9 +1,9 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { fabric } from "fabric";
 
 function App() {
-  React.useEffect(() => {
+  useEffect(() => {
     const canvas = new fabric.Canvas("c");
     const rect = new fabric.Rect({
       width: 50,
