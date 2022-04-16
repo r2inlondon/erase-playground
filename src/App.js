@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useEffect } from "react";
 import { fabric } from "fabric";
+import "fabric/src/mixins/eraser_brush.mixin";
 
 function App() {
   useEffect(() => {
@@ -20,14 +21,29 @@ function App() {
       width: 200,
     });
 
-    // fabric.Image.fromURL(frog, function (oImg) {
-    //   oImg.scale(0.1).set({ left: 350, top: 150, angle: 90 });
-    //   canvas.add(oImg);
-    // });
+    fabric.Image.fromURL(
+      "https://files.onoranzefunebricloud.com/PNgeKjwe16_allegati_04185060-fb13-4547-a71e-5467118e2ba4.png",
+      function (oImg) {
+        oImg.scale(0.1).set({ left: 350, top: 150, angle: 90 });
+        canvas.add(oImg);
+      }
+    );
 
-    // canvas.freeDrawingBrush = new fabric.EraserBrush(canvas);
-    // canvas.isDrawingMode = true;
-    // canvas.freeDrawingBrush.width = 10;
+    fabric.Image.fromURL(
+      "https://files.onoranzefunebricloud.com/be4fec6004c5b9980dc5ee7a26522e20_manifesto3jpg.jpeg",
+      function (img) {
+        // add background image
+        canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+          scaleX: canvas.width / img.width,
+          scaleY: canvas.height / img.height,
+          erasable: false,
+        });
+      }
+    );
+
+    canvas.freeDrawingBrush = new fabric.EraserBrush(canvas);
+    canvas.isDrawingMode = true;
+    canvas.freeDrawingBrush.width = 10;
 
     // canvas.freeDrawingBrush = new fabric.PencilBrush(canvas);
     // canvas.freeDrawingBrush.width = 10;
