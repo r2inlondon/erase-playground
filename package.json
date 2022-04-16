@@ -14,6 +14,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "postinstall": "node ./node_modules/fabric/build.js modules=ALL requirejs dest=./node_modules/fabric/dist/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -36,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "uglifyjs": "^2.4.11"
   }
 }

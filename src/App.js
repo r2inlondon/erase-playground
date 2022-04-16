@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useEffect } from "react";
 import { fabric } from "fabric";
-import "fabric/src/mixins/eraser_brush.mixin";
 
 function App() {
   useEffect(() => {
