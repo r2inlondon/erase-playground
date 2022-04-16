@@ -13,12 +13,26 @@ function App() {
       top: 20,
       left: 20,
     });
-    const textbox = new fabric.Textbox("Click on the Rectangle to move it.", {
+    const textbox = new fabric.Text("Click on the Rectangle to move it.", {
       fontSize: 20,
       left: 50,
       top: 100,
       width: 200,
     });
+
+    // fabric.Image.fromURL(frog, function (oImg) {
+    //   oImg.scale(0.1).set({ left: 350, top: 150, angle: 90 });
+    //   canvas.add(oImg);
+    // });
+
+    // canvas.freeDrawingBrush = new fabric.EraserBrush(canvas);
+    // canvas.isDrawingMode = true;
+    // canvas.freeDrawingBrush.width = 10;
+
+    // canvas.freeDrawingBrush = new fabric.PencilBrush(canvas);
+    // canvas.freeDrawingBrush.width = 10;
+    // canvas.isDrawingMode = true;
+
     canvas.add(textbox);
     canvas.add(rect);
 
